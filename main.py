@@ -1,9 +1,9 @@
-import glob
-import csv
-interesting_files = glob.glob("/home/tcs/PYTHONMAP/test1/*.csv")
+import glob, csv, os
+dirname = os.path.dirname(os.path.abspath(__file__))
+interesting_files = glob.glob(os.path.join(dirname, "dump", "*.csv"))
 
 header_saved = False
-with open('/home/tcs/PYTHONMAP/output.csv', 'w') as fout:
+with open(os.path.join(dirname, 'output.csv'), 'w') as fout:
     writer = csv.writer(fout)
     for filename in interesting_files:
         with open(filename) as fin:

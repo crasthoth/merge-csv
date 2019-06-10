@@ -1,2 +1,2 @@
 # merge-csv
-use pandas to merge csv files without repeating header
+merge csv files without repeating header
